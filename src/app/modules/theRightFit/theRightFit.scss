@@ -1,0 +1,27 @@
+@import '../../assets/styles/breakpoints';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/variables';
+
+.theRightFit {
+    &__base {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__text {
+        &Container {
+            width: 80%;
+        }
+
+        &Content {
+            text-align: center;
+            line-height: 170%;
+        }
+    }
+}

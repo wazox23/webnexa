@@ -1,0 +1,53 @@
+@import "../../assets/styles/breakpoints";
+@import "../../assets/styles/colors";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/layout";
+
+.footer {
+    &__base {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 50px;
+        border-top-left-radius: 48px;
+        border-top-right-radius: 48px;
+        background-color: $c-primary;
+        align-items: center;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__subText {
+        color: $c-white;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $c-white;
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        @include lg {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &Column {
+            margin-top: 20px;
+            color: $c-white;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}

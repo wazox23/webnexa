@@ -1,0 +1,69 @@
+@import "../../assets/styles/breakpoints";
+@import "../../assets/styles/colors";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/layout";
+
+.accordion {
+    &__base {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 8px;
+    }
+
+    &__item {
+        border-radius: 8px;
+        background: $c-primary;
+        overflow: hidden;
+    }
+
+    &__trigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: $c-primary;
+        color: $c-white;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: background $d-short;
+        font-size: 1.25rem;
+
+        &Title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        &Icon {
+            transition: transform 0.3s;
+
+            svg {
+                width: 30px;
+                height: 30px;
+                fill: $c-white;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        &[aria-expanded="true"] .accordion__triggerIcon svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        background: $c-white;
+        padding: 0 15px;
+
+        &--open {
+            padding: 15px;
+            max-height: 500px;
+        }
+    }
+}

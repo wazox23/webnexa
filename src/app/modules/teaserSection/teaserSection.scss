@@ -1,0 +1,39 @@
+@import "../../assets/styles/breakpoints";
+@import "../../assets/styles/colors";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/layout";
+
+.teaserSection {
+    &__base {
+        padding: 160px 0;
+        background-color: $c-white;
+        text-align: center;
+        border-radius: 48px;
+    }
+
+    &__title {
+        color: $c-primary;
+        margin-bottom: 16px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 70px;
+
+        @include lg {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__item {
+        max-width: 300px;
+        text-align: center;
+    }
+
+    &__icon {
+        fill: $c-primary;
+        margin: 20px 0px;
+    }
+}
